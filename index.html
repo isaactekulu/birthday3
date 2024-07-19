@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Complex Birthday Card</title>
+
+</head>
+<body>
+<div class="card-container">
+    <div class="card" id="birthdayCard">
+        <div class="card-face active" id="page1">
+            <img src="https://via.placeholder.com/350x200" alt="Birthday Image">
+            <div class="message">
+                <h1>Happy Birthday!</h1>
+                <p>Hope you have a wonderful day!</p>
+                <p>This is your special day, and I hope it brings you lots of joy and happiness.</p>
+                <p>Enjoy every moment!</p>
+            </div>
+            <div class="nav-buttons">
+                <button class="flip-button" onclick="nextPage(2)">Next</button>
+            </div>
+        </div>
+        <div class="card-face" id="page2">
+            <div class="message">
+                <h1>Surprise!</h1>
+                <p>Here’s to another year full of adventures.</p>
+                <p>May this year bring you new experiences and unforgettable memories.</p>
+                <p>Celebrate to the fullest!</p>
+            </div>
+            <div class="nav-buttons">
+                <button class="flip-button" onclick="prevPage(1)">Prev</button>
+                <button class="flip-button" onclick="nextPage(3)">Next</button>
+            </div>
+        </div>
+        <div class="card-face" id="page3">
+            <div class="message">
+                <h1>Cheers!</h1>
+                <p>May your day be filled with love and joy.</p>
+                <p>Surround yourself with loved ones, laugh out loud, and create beautiful memories.</p>
+                <p>Happy Birthday!</p>
+            </div>
+            <div class="nav-buttons">
+                <button class="flip-button" onclick="prevPage(2)">Prev</button>
+                <button class="flip-button" onclick="nextPage(4)">Next</button>
+            </div>
+        </div>
+        <div class="card-face" id="page4">
+            <div class="message">
+                <h1>Gratitude!</h1>
+                <p>Thank you for being such an amazing person.</p>
+                <p>Your kindness and positivity touch everyone around you.</p>
+                <p>Wishing you a fantastic birthday!</p>
+            </div>
+            <div class="nav-buttons">
+                <button class="flip-button" onclick="prevPage(3)">Prev</button>
+                <button class="flip-button" onclick="nextPage(5)">Next</button>
+            </div>
+        </div>
+        <div class="card-face" id="page5">
+            <div class="message">
+                <h1>Best Wishes!</h1>
+                <p>May all your dreams come true.</p>
+                <p>Enjoy your special day to the fullest.</p>
+                <p>Here’s to a year filled with love, laughter, and endless happiness.</p>
+                <p>Happy Birthday!</p>
+            </div>
+            <div class="nav-buttons">
+                <button class="flip-button" onclick="prevPage(4)">Prev</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function nextPage(pageNumber) {
+        const currentPage = document.querySelector('.card-face.active');
+        const nextPage = document.getElementById(`page${pageNumber}`);
+        currentPage.classList.remove('active');
+        nextPage.classList.add('active');
+    }
+
+    function prevPage(pageNumber) {
+        const currentPage = document.querySelector('.card-face.active');
+        const prevPage = document.getElementById(`page${pageNumber}`);
+        currentPage.classList.remove('active');
+        prevPage.classList.add('active');
+    }
+</script>
+</body>
+</html>
